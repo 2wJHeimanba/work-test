@@ -87,4 +87,42 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "iconfont"; /* Project id 2722874 */
+  src: url('./assets/iconfont/iconfont.woff2?t=1628082757211') format('woff2'),
+       url('./assets/iconfont/iconfont.woff?t=1628082757211') format('woff'),
+       url('./assets/iconfont/iconfont.ttf?t=1628082757211') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-kecheng:before {
+  content: "\e724";
+}
+
+.icon-xiangxia:before {
+  content: "\e63a";
+}
+
+.icon-gongzi:before {
+  content: "\e7e9";
+}
+
+.icon-shouye:before {
+  content: "\e61c";
+}
+
+.icon-renyuan:before {
+  content: "\e65e";
+}
+
+.icon-gongzuo:before {
+  content: "\e62b";
+}
 </style>

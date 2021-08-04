@@ -25,8 +25,5 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ],
-  "peerDependencies": {
-    "velocity": "^0.7.3"
-  }
+  ]
 }
