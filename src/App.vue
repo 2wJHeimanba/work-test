@@ -2,20 +2,20 @@
 
 
   <div id="app">
+    <!-- 顶部 -->
     <div id="top_banner">
       <top></top>
     </div>
     <div id="box">
+      <!-- 导航栏 -->
       <div class="nav">
         <sidebar></sidebar>
       </div>
-      <div class="content"></div>
+      <!-- 内容展示区 -->
+      <div class="content">
+        <router-view/>
+      </div>
     </div>
-    <!-- <div id="nav">
-      <router-link to="/">首页</router-link> |
-      <router-link to="/about">关于</router-link>
-    </div>
-    <router-view/> -->
   </div>
 </template>
 
@@ -59,21 +59,24 @@ export default {
   border: 2px solid #ccc;
   height: 100px;
   width: 100vw;
-  // background: pink;
 }
 #box{
   display: flex;
   padding-bottom: -200px;
   height: calc(100% - 100px);
-  // background: pink;
+ 
   .nav{
     border: 2px solid blue;
     width: 180px;
+    background: orange;
+    // background: radial-gradient(circle farthest-side at 80px 100px,orange 0%,orange 100%,transparent 100%) no-repeat top left/120px 120px,
+				// linear-gradient(to bottom,orange 0% 100%) no-repeat left 100px;
+    padding: 100px 0;
   }
   .content{
     border: 2px solid green;
     flex: 1 1;
-    // background: green;
+    padding: 10px 15px;
   }
 }
 
