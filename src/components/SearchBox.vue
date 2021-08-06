@@ -1,15 +1,27 @@
 <template>
     <div id="search-box">
-        <input type="text" @input="query_key" v-model="keys">
-        <span>lo</span>
-        <span>so</span>
+        <input type="text" :placeholder="place_h" @input="query_key" v-model="keys" :style="icon?'':'padding:0 10px'">
+        <span v-show="icon" :class="'iconfont '+icon_name"></span>
     </div>
 </template>
 
 <script>
+
 export default {
     props:{
-        val:String
+        val:String,
+        icon:{
+            type:Boolean,
+            default:false
+        },
+        icon_name:{
+            type:String,
+            default:"icon-sousuo"
+        },
+        place_h:{
+            type:String,
+            default:"请输入关键字查询"
+        }
     },
     data() {
         return{
@@ -29,10 +41,12 @@ export default {
 #search-box{
     height: 100%;
     width: 100%;
-    background: pink;
+    background: #fffef9;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #ccc;
+    background: #fff;
 
     &>input{
         border: none;
@@ -40,18 +54,22 @@ export default {
         width: 100%;
         height: 100%;
         background: transparent;
-        padding:0 50px;
+        padding:0 45px;
+        background: #f4f5f9;
     }
     &>span{
         position: absolute;
-        height: 20px;
-        width: 20px;
+        height: 25px;
+        width: 25px;
         top: 50%;
         transform: translateY(-50%);
-        background: yellowgreen;
+        color: blue;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 25px;
     }
     &>span:nth-of-type(1){
-        left: 15px;
+        left: 10px;
     }
     &>span:nth-of-type(2){
         right: 15px;

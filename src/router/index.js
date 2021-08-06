@@ -11,7 +11,7 @@ const routes = [
       path: '/',
       name: 'index',
       tochange:true,
-      component:()=>import('../views/Intern.vue'),
+      component:()=>import('../views/Index.vue'),
       title:'首页',
       meta:{title:"首页"},
       icon:'icon-shouye'

@@ -1,6 +1,6 @@
 <template>
     <div id="select_component">
-        <div tabindex="1" id="wenjianjia">{{test}}</div>
+        <div tabindex="1" id="wenjianjia">{{title}}</div>
         <ul :style="'height:'+height+'px'">
             <li v-for="(value) in list" @click="changeHeight(value)" :key="value">{{value}}</li>
         </ul>
@@ -9,29 +9,41 @@
 
 <script>
 export default {
+    props:{
+        place_h:{
+            type:String,
+            default:"选择项目"
+        },
+        show_list:{
+            type:Array,
+            default:["nothing to select"]
+        }
+    },
     data(){
         return{
-            test:"选择爱好",
-            list:['我是选项1','我是选项2','我是选项3','我是选项4','我是选项5'],
+            title:this.place_h,
+            list:this.show_list,
             height:0
         }
     },
     mounted(){
-        document.addEventListener("click",(e)=>{
+        document.addEventListener("click",this.listerClick)
+    },
+    methods:{
+        changeHeight(value){
+            this.title=value
+        },
+        listerClick(e){
             if(e.target.getAttribute("id")==='wenjianjia'){
                 this.height=this.list.length*30
             }else{
                 this.height=0
             }
-        })
-    },
-    methods:{
-        changeHeight(value){
-            this.test=value
         }
     },
     destroyed(){
-        document.removeEventListener("click")
+        document.removeEventListener("click",this.listerClick);
+        this.title=this.$options.data().title
     }
 }
 </script>

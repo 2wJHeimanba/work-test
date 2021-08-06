@@ -3,7 +3,7 @@
     <div id="retrieve">
         <bread></bread>
         <div>
-            <selectcom></selectcom>
+            <selectcom place_h="选择项目" :show_list="list"></selectcom>
         </div>
     </div>
 </template>
@@ -14,7 +14,8 @@ import selectcom from '../components/Select_component'
 export default {
     data(){
         return{
-            test:"hello retrieve"
+            test:"hello retrieve",
+            list:['我是选项1','我是选项2','我是选项3','我是选项4','我是选项5']
         }
     },
     components:{bread,selectcom}

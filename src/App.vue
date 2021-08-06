@@ -40,7 +40,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
-  background: black;
+  background: #f4f5f9;
+  min-width: 837px;
 }
 
 // #nav {
@@ -58,7 +59,7 @@ export default {
 #top_banner{
   border: 2px solid #ccc;
   height: 100px;
-  width: 100vw;
+  width: 100%;
 }
 #box{
   display: flex;
@@ -69,8 +70,6 @@ export default {
     border: 2px solid blue;
     width: 180px;
     background: orange;
-    // background: radial-gradient(circle farthest-side at 80px 100px,orange 0%,orange 100%,transparent 100%) no-repeat top left/120px 120px,
-				// linear-gradient(to bottom,orange 0% 100%) no-repeat left 100px;
     padding: 100px 0;
   }
   .content{
@@ -92,9 +91,9 @@ export default {
 }
 @font-face {
   font-family: "iconfont"; /* Project id 2722874 */
-  src: url('./assets/iconfont/iconfont.woff2?t=1628082757211') format('woff2'),
-       url('./assets/iconfont/iconfont.woff?t=1628082757211') format('woff'),
-       url('./assets/iconfont/iconfont.ttf?t=1628082757211') format('truetype');
+  src: url('./assets/iconfont/iconfont.woff2?t=1628213497987') format('woff2'),
+       url('./assets/iconfont/iconfont.woff?t=1628213497987') format('woff'),
+       url('./assets/iconfont/iconfont.ttf?t=1628213497987') format('truetype');
 }
 
 .iconfont {
@@ -103,6 +102,70 @@ export default {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon02:before {
+  content: "\e620";
+}
+
+.icon-yiguoqi:before {
+  content: "\e60c";
+}
+
+.icon-chuqin:before {
+  content: "\e61b";
+}
+
+.icon-yiguoqi1:before {
+  content: "\e612";
+}
+
+.icon-tuichu:before {
+  content: "\e600";
+}
+
+.icon-tixing:before {
+  content: "\e601";
+}
+
+.icon-jinhangzhong:before {
+  content: "\e602";
+}
+
+.icon-shixi:before {
+  content: "\e70e";
+}
+
+.icon-tianchongxing-:before {
+  content: "\e637";
+}
+
+.icon-yiguoqi2:before {
+  content: "\e795";
+}
+
+.icon-yiwancheng:before {
+  content: "\e62c";
+}
+
+.icon-wenduji:before {
+  content: "\e603";
+}
+
+.icon-sousuo:before {
+  content: "\e615";
+}
+
+.icon-yiwancheng1:before {
+  content: "\e640";
+}
+
+.icon-xiangzuo:before {
+  content: "\e85e";
+}
+
+.icon-shezhi:before {
+  content: "\e606";
 }
 
 .icon-kecheng:before {

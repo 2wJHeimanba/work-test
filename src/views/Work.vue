@@ -4,7 +4,7 @@
             <retrieve></retrieve>
         </div>
         <div>
-            <search v-bind:val.sync="search_key"></search>
+            <search v-bind:val.sync="search_key" :icon="true" icon_name="icon-sousuo" place_h="请输入关键字"></search>
         </div>
         <div style="background:white;width:100px;height:30px;border:2px solid #fff">{{search_key}}</div>
     </div>
