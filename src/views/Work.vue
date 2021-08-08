@@ -3,16 +3,15 @@
         <div>
             <retrieve></retrieve>
         </div>
-        <div>
-            <search v-bind:val.sync="search_key" :icon="true" icon_name="icon-sousuo" place_h="请输入关键字"></search>
+        <div class="work_list">
+            <workList></workList>
         </div>
-        <div style="background:white;width:100px;height:30px;border:2px solid #fff">{{search_key}}</div>
     </div>
 </template>
 
 <script>
 import retrieve from '../components/Retrieve'
-import search from '../components/SearchBox.vue'
+import workList from '../components/work_comp/work_list.vue'
 export default {
     data(){
         return{
@@ -20,7 +19,7 @@ export default {
             search_key:""
         }
     },
-    components:{retrieve,search}
+    components:{retrieve,workList}
 }
 </script>
 
@@ -28,11 +27,41 @@ export default {
 #work{
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    padding-bottom: 5px;
+    background: #f4f5f9;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 
-    &>div:nth-child(2){
-        height: 40px;
-        width: 250px;
+
+    &::-webkit-scrollbar{
+        width: 5px;
+        background: #f2eada;
     }
+    &::-webkit-scrollbar-corner,
+    &::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar-track{
+        border-radius: 2px;
+    }
+    &::-webkit-scrollbar-corner,
+    &::-webkit-scrollbar-track{
+        background-color: rgba(180,160,120,0.1);
+        box-shadow: inset 0 0 1px rgba(180,160,120,0.5);
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #e0861a;
+    }
+
+    &>.work_list{
+        flex: 1 1;
+        margin-top: 10px;
+        border-radius: 10px;
+        // height: 300px;
+        box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.1),0px 0px 5px 0 rgba(0, 0, 0, 0.1);
+        background: #fff;
+        padding: 10px;
+    }
+   
 }
 </style>

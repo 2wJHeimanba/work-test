@@ -45,8 +45,8 @@ export default {
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background: #fff;
+    border: 1px solid rgba(111,109,133,0.3);
+    background: #f4f5f9;
 
     &>input{
         border: none;

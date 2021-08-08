@@ -51,10 +51,12 @@ export default {
 <style lang="less" scoped>
 #select_component{
     &>div:nth-child(1){
-        height: 42px;
-        border: 2px solid rgba(111,109,133,0.3);
+        height: 100%;
+        border: 1px solid rgba(111,109,133,0.3);
         border-radius: 8px;
         color: rgba(0,0,0,0.5);
+        background: #f4f5f9;
+        font-size: 14px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -70,7 +72,7 @@ export default {
     }
     &>ul{
         list-style: none;
-        background: #fff;
+        background: #f4f5f9;
         border-radius: 0 0 8px 8px;
         overflow: hidden;
         transition: height 0.2s linear;
@@ -79,7 +81,7 @@ export default {
         top: 99%;
         left: 0;
         width: 100%;
-        border: 2px solid rgba(111,109,133,0.3);
+        border: 1px solid rgba(111,109,133,0.3);
         border-top: none;
 
         &>li{
@@ -94,9 +96,9 @@ export default {
             font-weight: bold;
         }
     }
+    height: 100%;
     border-radius: 8px;
-    width: 250px;
+    width: 100%;
     position: relative;
-    margin: 20px;
 }
 </style>

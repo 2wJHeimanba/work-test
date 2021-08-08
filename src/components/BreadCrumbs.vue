@@ -30,6 +30,7 @@ export default {
     padding-left: 15px;
     font-size: 14px;
     color: #333;
+    border-radius: 8px 8px 0 0;
     &>.bread_logo{
         height: 20px;
         width: 20px;

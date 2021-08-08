@@ -41,25 +41,15 @@ export default {
   color: #2c3e50;
   height: 100vh;
   background: #f4f5f9;
-  min-width: 837px;
+  min-width: 768px;
 }
 
-// #nav {
-//   padding: 30px;
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
-
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
-
 #top_banner{
-  border: 2px solid #ccc;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   height: 100px;
   width: 100%;
+  transition: all 0.3s linear;
+  z-index: 100;
 }
 #box{
   display: flex;
@@ -67,15 +57,42 @@ export default {
   height: calc(100% - 100px);
  
   .nav{
-    border: 2px solid blue;
     width: 180px;
     background: orange;
     padding: 100px 0;
+    transition: all 0.5s linear;
   }
   .content{
-    border: 2px solid green;
     flex: 1 1;
-    padding: 10px 15px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #top_banner{
+    height: 80px;
+  }
+  #box{
+    &>.nav{
+      width: 120px;
+    }
+  }
+}
+
+@media screen and (min-width:769px) {
+  #box{
+    &>.nav{
+      width: 150px;
+      // border: 3px solid blue;
+    }
+  }
+}
+
+@media screen and (min-width:1024px) {
+  #box{
+    &>.nav{
+      width: 180px;
+    }
   }
 }
 
@@ -91,9 +108,9 @@ export default {
 }
 @font-face {
   font-family: "iconfont"; /* Project id 2722874 */
-  src: url('./assets/iconfont/iconfont.woff2?t=1628213497987') format('woff2'),
-       url('./assets/iconfont/iconfont.woff?t=1628213497987') format('woff'),
-       url('./assets/iconfont/iconfont.ttf?t=1628213497987') format('truetype');
+  src: url('./assets/iconfont/iconfont.woff2?t=1628301535007') format('woff2'),
+       url('./assets/iconfont/iconfont.woff?t=1628301535007') format('woff'),
+       url('./assets/iconfont/iconfont.ttf?t=1628301535007') format('truetype');
 }
 
 .iconfont {
@@ -102,6 +119,34 @@ export default {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xingzhuang60kaobei2:before {
+  content: "\e604";
+}
+
+.icon-baifenbi:before {
+  content: "\e611";
+}
+
+.icon-chuqinshuai:before {
+  content: "\e6a2";
+}
+
+.icon-renyuan1:before {
+  content: "\e6dc";
+}
+
+.icon-down-fill:before {
+  content: "\e675";
+}
+
+.icon-jianli:before {
+  content: "\e605";
+}
+
+.icon-gengduo:before {
+  content: "\e617";
 }
 
 .icon-icon02:before {

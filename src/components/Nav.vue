@@ -104,6 +104,7 @@ export default {
     .Secondary_navigation{
         overflow: hidden;
         transition: all 0.2s linear;
+        font-size: 14px;
         &>li{
             font-size: 14px;
             height: 40px;
@@ -116,6 +117,20 @@ export default {
         //     color: #fff;
         //     font-weight: bold;
         // }
+    }
+}
+
+@media screen and (max-width:768px) {
+    #sidebar{
+        &>ul{
+            &>li{
+                &>div{
+                    &>div:nth-child(1){
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 
