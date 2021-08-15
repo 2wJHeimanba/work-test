@@ -13,7 +13,7 @@ const routes = [
       tochange:true,
       component:()=>import('../views/Index.vue'),
       title:'首页',
-      meta:{title:"首页"},
+      meta:{title:"首页",childrens_num:0},
       icon:'icon-shouye'
   },
   {
@@ -23,7 +23,8 @@ const routes = [
         id:1,
         title:"工作",
         tochange:false,
-        icon:'icon-gongzuo'
+        icon:'icon-gongzuo',
+        childrens_num:1
       }},
       component:()=>import('../views/Work.vue'),
     },
@@ -34,7 +35,8 @@ const routes = [
         id:2,
         title:'人员',
         tochange:false,
-        icon:'icon-renyuan'
+        icon:'icon-renyuan',
+        childrens_num:2
       }},
       component:()=>import('../views/Employees.vue'),
     },
@@ -46,7 +48,8 @@ const routes = [
           id:2,
           title:'人员',
           tochange:false,
-          icon:'icon-renyuan'
+          icon:'icon-renyuan',
+          childrens_num:2
         }
       },
       component:()=>import('../views/Intern.vue')
@@ -60,7 +63,8 @@ const routes = [
           id:3,
           title:'工资',
           tochange:false,
-          icon:'icon-gongzi'
+          icon:'icon-gongzi',
+          childrens_num:1
         }
       },
       component:()=>import('../views/Salary.vue')
@@ -72,7 +76,8 @@ const routes = [
         id:4,
         title:'课程',
         tochange:false,
-        icon:'icon-kecheng'
+        icon:'icon-kecheng',
+        childrens_num:1
       }},
       component:()=>import('../views/Course.vue')
   }
@@ -86,7 +91,6 @@ const router = new VueRouter({
 // 全局路由守卫
 router.beforeEach((to,from,next)=>{
   document.title="实习生后台-"+to.meta.title
-  // console.log(to)
   next()
 })
 
