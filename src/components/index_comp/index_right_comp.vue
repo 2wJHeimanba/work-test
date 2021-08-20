@@ -223,4 +223,11 @@ export default {
         }
     }
 }
+
+@media screen and (min-width:1024px) {
+    #index_right{
+        margin-top: 8px;
+        // border: 1px solid red;
+    }
+}
 </style>

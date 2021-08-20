@@ -4,7 +4,7 @@
             <li v-for="(value,index) in list" :key="value.title" @click="test(index,value,$event)">
 
                 <router-link :class="(index==toggle_key&&value.tochange)?'dot':''" :to="value.tochange?value.path:''" tag="div">
-                    <span :class="'iconfont '+value.icon"></span>
+                    <span :class="'iconfont '+value.icon" :style="{color:index==toggle_key?'#fff':'#333'}"></span>
                     <div :style="{color:`${index===toggle_key?'#f2eada':'#333'}`}">{{value.title}}</div>
                     <svg v-if="value.childrens" :style="index==toggle_key?'transform:translateY(-50%) rotate(-90deg)':''" t="1628086110358" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9466" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10"><path d="M553.1392 778.88512l451.61472-451.61472c22.64576-22.64576 22.64576-59.4176 0-82.14016-22.64576-22.64576-59.4176-22.64576-82.14016 0l-410.5472 410.61888-410.61888-410.624c-22.64576-22.64576-59.4176-22.64576-82.14016 0-22.64576 22.64576-22.64576 59.4176 0 82.14016l451.69152 451.69152a58.08128 58.08128 0 0 0 82.14016-0.07168z" :fill="index==toggle_key?'#fff':'#333'" p-id="9467"></path></svg>
                 </router-link>
@@ -118,6 +118,7 @@ export default {
         transition: all 0.2s linear;
         font-size: 14px;
         &>li{
+            text-align: center;
             font-size: 14px;
             height: 40px;
             line-height: 40px;
@@ -139,6 +140,10 @@ export default {
                 &>div{
                     &>span:nth-child(1){
                         display: none;
+                    }
+                    &>div:nth-child(2){
+                        padding-left: 20px;
+                        justify-content: flex-start;
                     }
                 }
             }

@@ -353,19 +353,6 @@ export default {
                 }
             }
         }
-        // &>#right{
-        //     height: 1000px;
-        //     padding: 10px 15px;
-        //     &>.index_right{
-        //         // height: 400px;
-        //         padding: 10px 0;
-        //         overflow: hidden;
-        //         border-radius: 10px;
-        //         box-shadow: 2px 3px 8px rgba(0,0,0,0.1), 0px 0px 5px rgba(0,0,0,0.1);
-        //         background: #fff;
-        //         padding: 10px;
-        //     }
-        // }
     }
 }
 
@@ -386,6 +373,7 @@ export default {
             }
         }
         &>#right{
+            padding-top: 8px;
             padding-bottom: 30px;
         }
     }
@@ -395,6 +383,10 @@ export default {
     #index{
         &>#right{
             margin-top: 10px;
+            padding-left: 3px;
+        }
+        &>#left{
+            padding-right: 0px;
         }
     }
 }

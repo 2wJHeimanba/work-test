@@ -8,12 +8,15 @@
     </div>
     <div id="box">
       <!-- 导航栏 -->
-      <div class="nav">
+      <div class="nav" ref="nav_width">
         <sidebar></sidebar>
       </div>
       <!-- 内容展示区 -->
-      <div class="content">
-        <router-view/>
+      <div class="content" ref="content_width">
+        <transition name="fade" mode="out-in">
+          <router-view/>
+        </transition>
+        
       </div>
     </div>
   </div>
@@ -23,16 +26,25 @@
 import top from './components/Top'
 import sidebar from './components/Nav'
 export default {
-  data(){
-    return{
-
+  components:{top,sidebar},
+  mounted(){
+    window.onresize=()=>{
+      var Width = window.innerWidth|| document.documentElement.clientWidth|| document.body.clientWidth;
+      if(768<=Width&&Width<1024){
+        this.$refs.content_width.style.width=`${Width-150}px`
+      }
     }
-  },
-  components:{top,sidebar}
+  }
 }
 </script>
 
 <style lang="less" scoped>
+.fade-enter-active, .fade-leave-active{
+  transition:opacity 0.3s ease-in-out;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -70,6 +82,7 @@ export default {
 
 @media screen and (max-width:768px) {
   #top_banner{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     height: 80px;
   }
   #box{
@@ -79,11 +92,10 @@ export default {
   }
 }
 
-@media screen and (min-width:769px) {
+@media screen and (min-width:768px) {
   #box{
     &>.nav{
       width: 150px;
-      // border: 3px solid blue;
     }
   }
 }

@@ -3,16 +3,7 @@
         <table>
             <tr>
                 <td><input type="checkbox"></td>
-                <td title="岗位">岗位</td>
-                <td>姓名</td>
-                <td>性别</td>
-                <td>联系电话</td>
-                <td>状态</td>
-                <td>工作评分</td>
-                <td>完成工作</td>
-                <td>导师评价</td>
-                <td>导师</td>
-                <td>简历</td>
+                <td v-for="(value,index) in header_list" :key="index">{{value}}</td>
             </tr>
             <tr>
                 <td><input type="checkbox"></td>
@@ -23,34 +14,6 @@
                 <td>工作中</td>
                 <td>5</td>
                 <td>6</td>
-                <td>5分</td>
-                <td>张天师</td>
-                <td><span class="iconfont icon-kecheng"></span></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>java开发</td>
-                <td>阮一峰</td>
-                <td>男</td>
-                <td>17436843683</td>
-                <td>完成工作</td>
-                <td>7</td>
-                <td>5</td>
-                <td>5分</td>
-                <td>巴利</td>
-                <td><span class="iconfont icon-kecheng"></span></td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>java开发</td>
-                <td>阮一峰</td>
-                <td>男</td>
-                <td>17436843683</td>
-                <td>完成工作</td>
-                <td>7</td>
-                <td>5</td>
-                <td>5分</td>
-                <td>巴利</td>
                 <td><span class="iconfont icon-kecheng"></span></td>
             </tr>
         </table>
@@ -60,6 +23,12 @@
 
 <script>
 export default {
+    props:{
+        header_list:{
+            type:Array,
+            required:true
+        }
+    },
     data() {
         return{
             test:"hello world"
@@ -94,6 +63,7 @@ export default {
         width: 100%;
         font-size: 14px;
         border-collapse: collapse;
+        
 
         &>tr{
             &:nth-child(1){
@@ -144,14 +114,12 @@ export default {
     }
 }
 
-@media screen and (min-width:769px) {
+@media screen and (min-width:768px) {
     #work_list{
-        // min-width: 611.333px;
-        // max-width: calc(1024px - 180px);
-        width: 780px;
+        width: 100%;
         &>table{
             width: 100%;
-            background: pink;
+            // background: pink;
         }
     }
 }
@@ -159,7 +127,7 @@ export default {
 @media screen and (min-width:1024px) {
     #work_list{
         &>table{
-            background: orange;
+            // background: orange;
         }
     }
 }

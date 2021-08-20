@@ -42,13 +42,11 @@ export default {
 #retrieve{
     height: 150px;
     background: #fff;
-    // border: 2px solid #ccc;
     border-radius: 8px;
     margin-bottom: 8px;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, 0.1),0px 0px 5px 0 rgba(0, 0, 0, 0.1);
-    // overflow: hidden;
 
     &>.retrieve_operate{
         flex: 1 1;
@@ -60,8 +58,8 @@ export default {
         &>.retrieve_select_box{
             display: flex;
             align-items: flex-end;
-            justify-content: center;
-            // border: 1px solid red;
+            justify-content: flex-start;
+            padding-left: 25px;
             &>div{
                 height: 35px;
                 width: 180px;
@@ -69,12 +67,8 @@ export default {
             &>div:nth-child(2){
                 margin: 0 12px;
             }
-            &>div:nth-child(1){
-                
-            }
         }
         &>.retrieve_input_operate{
-            // border: 1px solid blue;
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -93,10 +87,8 @@ export default {
                 
                 &:nth-child(1){
                     margin-right: 10px;
-
                 }
             }
-            
         }
     }
 }
@@ -107,7 +99,10 @@ export default {
             display: grid;
             grid-template-columns: 2fr 1fr;
             grid-template-rows: 1fr;
-            background: pink;
+
+            &>.retrieve_select_box{
+                align-items: center;
+            }
         }
     }
 }

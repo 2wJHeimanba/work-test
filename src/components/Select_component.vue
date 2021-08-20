@@ -1,7 +1,7 @@
 <template>
     <div id="select_component">
-        <div tabindex="1" id="wenjianjia">{{title}}</div>
-        <ul :style="'height:'+height+'px'">
+        <div tabindex="1" ref="select_box">{{title}}</div>
+        <ul :style="{height:`${height}px`}">
             <li v-for="(value) in list" @click="changeHeight(value)" :key="value">{{value}}</li>
         </ul>
     </div>
@@ -34,7 +34,7 @@ export default {
             this.title=value
         },
         listerClick(e){
-            if(e.target.getAttribute("id")==='wenjianjia'){
+            if(e.target==this.$refs.select_box){
                 this.height=this.list.length*30
             }else{
                 this.height=0
@@ -76,6 +76,7 @@ export default {
         border-radius: 0 0 8px 8px;
         overflow: hidden;
         transition: height 0.2s linear;
+        z-index: 100;
         
         position: absolute;
         top: 99%;

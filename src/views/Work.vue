@@ -4,7 +4,7 @@
             <retrieve></retrieve>
         </div>
         <div class="work_list">
-            <workList></workList>
+            <workList :header_list="header_list"></workList>
         </div>
     </div>
 </template>
@@ -16,7 +16,9 @@ export default {
     data(){
         return{
             test:"hello work",
-            search_key:""
+            search_key:"",
+            header_list:['工作类型','工作名称','状态','参与方式','参与完成','起止时间','工作反馈','操作'],
+            list_data:['会议','啥是给','进行中','自主报名','参与完成','2021.08.12-2021.09.10']
         }
     },
     components:{retrieve,workList}
